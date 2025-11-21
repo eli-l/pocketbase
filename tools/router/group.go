@@ -229,3 +229,7 @@ var wildcardPlaceholderRegex = regexp.MustCompile(`/{.+\.\.\.}$`)
 func stripWildcard(pattern string) string {
 	return wildcardPlaceholderRegex.ReplaceAllString(pattern, "/")
 }
+
+func (group *RouterGroup[T]) GetChildren() []any {
+	return group.children
+}
